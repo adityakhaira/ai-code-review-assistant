@@ -1,0 +1,621 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        Arial,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #1f2937;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.badge {
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* MAIN */
+
+.container {
+
+    width: 92%;
+
+    max-width: 1300px;
+
+    margin: auto;
+}
+
+
+/* HERO */
+
+.hero {
+
+    text-align: center;
+
+    padding: 45px 20px 35px;
+}
+
+.hero h1 {
+
+    margin: 0;
+
+    font-size: 38px;
+
+    letter-spacing: -1px;
+}
+
+.hero p {
+
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+/* WORKSPACE */
+
+.workspace {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* PANEL */
+
+.panel {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.panel-header {
+
+    margin-bottom: 22px;
+}
+
+.panel-header h2 {
+
+    margin: 0 0 5px;
+
+    font-size: 20px;
+}
+
+.panel-header p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* INPUT */
+
+label {
+
+    display: block;
+
+    margin: 18px 0 8px;
+
+    font-weight: 600;
+
+    font-size: 14px;
+}
+
+select,
+textarea {
+
+    width: 100%;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+select:focus,
+textarea:focus {
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+textarea {
+
+    height: 330px;
+
+    resize: vertical;
+
+    font-family: Consolas, monospace;
+
+    line-height: 1.5;
+}
+
+
+/* BUTTON */
+
+button {
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#reviewBtn {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    background: #111827;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+#reviewBtn:hover {
+
+    transform: translateY(-1px);
+
+    opacity: 0.92;
+}
+
+
+/* LOADING */
+
+.loading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.spinner {
+
+    width: 18px;
+
+    height: 18px;
+
+    border: 3px solid #ddd;
+
+    border-top-color: #111827;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* EMPTY */
+
+.empty-state {
+
+    height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: #6b7280;
+}
+
+.empty-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    font-weight: 700;
+}
+
+.empty-state h3 {
+
+    margin: 5px 0;
+
+    color: #374151;
+}
+
+
+/* SCORE */
+
+.score-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    background: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    margin-bottom: 25px;
+}
+
+.score-label {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+.score {
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* SECTIONS */
+
+.section {
+
+    margin-top: 25px;
+}
+
+.section-title {
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+
+/* BUG */
+
+.bug {
+
+    padding: 15px;
+
+    margin-bottom: 12px;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    border-left: 4px solid #111827;
+}
+
+.bug h4 {
+
+    margin: 0 0 10px;
+
+    font-size: 15px;
+}
+
+.bug p {
+
+    margin: 7px 0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* SUGGESTIONS */
+
+#suggestions {
+
+    padding-left: 20px;
+}
+
+#suggestions li {
+
+    margin-bottom: 8px;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* COMPLEXITY */
+
+.complexity {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.complexity-card {
+
+    padding: 15px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+}
+
+.complexity-card span {
+
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+
+/* CODE */
+
+pre {
+
+    margin: 0;
+
+    padding: 18px;
+
+    border-radius: 9px;
+
+    background: #111827;
+
+    color: #e5e7eb;
+
+    overflow-x: auto;
+
+    white-space: pre-wrap;
+
+    font-family: Consolas, monospace;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* HISTORY */
+
+.history-panel {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+}
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.history-header h2 {
+
+    margin: 0 0 5px;
+}
+
+.history-header p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.clear-btn {
+
+    padding: 9px 14px;
+
+    background: #f3f4f6;
+
+    color: #374151;
+}
+
+.history-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 14px;
+
+    border-top: 1px solid #eee;
+}
+
+.history-item strong {
+
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.history-item span {
+
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+.history-empty {
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #9ca3af;
+
+    font-size: 13px;
+}
+
+
+/* UTILITY */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .workspace {
+
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+
+        font-size: 30px;
+    }
+
+}

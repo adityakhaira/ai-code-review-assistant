@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Code Review Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            AI Code Reviewer
+        </div>
+
+        <div class="badge">
+            Powered by Gemini
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero">
+
+            <h1>
+                AI-Powered Code Review
+            </h1>
+
+            <p>
+                Analyze bugs, code quality, complexity and improvements
+                using an AI-assisted engineering workflow.
+            </p>
+
+        </section>
+
+
+        <section class="workspace">
+
+            <!-- INPUT -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Code Input</h2>
+
+                        <p>
+                            Paste your code and select the language.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <label for="language">
+                    Programming Language
+                </label>
+
+                <select id="language">
+
+                    <option value="cpp">
+                        C++
+                    </option>
+
+                    <option value="javascript">
+                        JavaScript
+                    </option>
+
+                    <option value="java">
+                        Java
+                    </option>
+
+                    <option value="python">
+                        Python
+                    </option>
+
+                </select>
+
+
+                <label for="code">
+                    Source Code
+                </label>
+
+                <textarea
+                    id="code"
+                    placeholder="// Paste your code here..."
+                ></textarea>
+
+
+                <button id="reviewBtn">
+                    Review Code
+                </button>
+
+
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <span>AI is analyzing your code...</span>
+                </div>
+
+            </div>
+
+
+            <!-- RESULTS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Review Results</h2>
+
+                        <p>
+                            AI-generated engineering analysis.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="emptyState" class="empty-state">
+
+                    <div class="empty-icon">
+                        AI
+                    </div>
+
+                    <h3>No review yet</h3>
+
+                    <p>
+                        Submit some code to receive an AI-powered review.
+                    </p>
+
+                </div>
+
+
+                <div id="result" class="hidden">
+
+
+                    <!-- SCORE -->
+
+                    <div class="score-card">
+
+                        <div>
+
+                            <span class="score-label">
+                                Code Quality
+                            </span>
+
+                            <span id="score" class="score">
+                                -
+                            </span>
+
+                        </div>
+
+                        <span>/ 10</span>
+
+                    </div>
+
+
+                    <!-- BUGS -->
+
+                    <div class="section">
+
+                        <div class="section-title">
+                            Potential Issues
+                        </div>
+
+                        <div id="bugs"></div>
+
+                    </div>
+
+
+                    <!-- SUGGESTIONS -->
+
+                    <div class="section">
+
+                        <div class="section-title">
+                            Suggestions
+                        </div>
+
+                        <ul id="suggestions"></ul>
+
+                    </div>
+
+
+                    <!-- COMPLEXITY -->
+
+                    <div class="section">
+
+                        <div class="section-title">
+                            Complexity
+                        </div>
+
+                        <div class="complexity">
+
+                            <div class="complexity-card">
+
+                                <span>
+                                    Time
+                                </span>
+
+                                <strong id="timeComplexity">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="complexity-card">
+
+                                <span>
+                                    Space
+                                </span>
+
+                                <strong id="spaceComplexity">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMPROVED CODE -->
+
+                    <div class="section">
+
+                        <div class="section-title">
+                            Improved Code
+                        </div>
+
+                        <pre id="improvedCode"></pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTORY -->
+
+        <section class="history-panel">
+
+            <div class="history-header">
+
+                <div>
+
+                    <h2>
+                        Review History
+                    </h2>
+
+                    <p>
+                        Your recent code reviews are stored locally.
+                    </p>
+
+                </div>
+
+                <button
+                    id="clearHistory"
+                    class="clear-btn"
+                >
+                    Clear History
+                </button>
+
+            </div>
+
+
+            <div id="historyList">
+
+                <p class="history-empty">
+                    No previous reviews.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            AI Code Review & Engineering Assistant
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
